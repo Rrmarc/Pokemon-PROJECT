@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url('cloud-background.jpg');
+  background: cover;
+}
+
+#header{
+  font-size: 35px;
+  text-align: center;
+  padding-top: 5%;
+}
+
+@media (max-width:500px){
+  #header{
+    font-size: 20px;
+  }
+  .mainPokeball > img{
+    width:100px;
+  }
+  #pokeball{
+    width: 150;
+  }
+
+}
+
+#container{
+  width: 100%;
+  height: auto;
+  margin: 0 ;
+
+}
+
+#pokeball{
+  width:200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: slideAndZoom 2s  ;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideAndZoom {
+  0%{
+    width: 500px;
+  }
+
+  100%{
+    width:200px;
+
+  }
+}
+
+
+/* .hidden{
+  opacity: 0;
+} */
+
+.mainPokeball > img{
+  width: 180px;
+  display:inline-block;
+  visibility: hidden;
+}
+.mainPokeball{
+  padding: 0;
+  margin: 0;
+  width:100%;
+  display: block;
+
+
+
+}
