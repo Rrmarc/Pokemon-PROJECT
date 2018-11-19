@@ -41,7 +41,7 @@ body{
   border-radius: 50%;
 }
 #pokeball{
-  width:200px;
+  width:50px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -74,7 +74,7 @@ body{
   opacity: 0;
 } */
 
-.mainPokeball > img{
+.pokemoncards > img{
   width: 180px;
   padding:30px;
   margin: 20px;
@@ -85,5 +85,10 @@ body{
   width:100%;
   display: none;
   animation:fadeIn 2s;
+}
 
+.pokemoncards{
+
+  width: 500px;
+  background-color: yellow;
 }

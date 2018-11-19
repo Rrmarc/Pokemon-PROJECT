@@ -14,52 +14,100 @@ function firstChange(){
 pokeBallClick.addEventListener('click', firstChange );
   // end of first click event
 
-// class Pokemon {
-//       constructor(hp,name,attack,defense,abilities){
-//           this.hp = hp;
-//           this.name = name;
-//           this.attack = attack;
-//           this.defense = defense;
-//           this.abilities = abilities;
-//     }
-//   }
-//
-//       let nidorino = new Pokemon();
-//       let steelix = new Pokemon();
-//       let totodile = new Pokemon();
 
 
-function pokemonData(){uj8
+
+
+
+
+
+class Pokemon {
+      constructor(name,hp,attack,defense){
+            this.name = name
+            this.hp = hp;
+            this.attack = attack;
+            this.defense = defense;
+            // this.conatiner = document.getElementById();
+            this.element = document.createElement('ul');
+            this.container = appendChild(this.element);
+            this.element.className = 'pokecard' ;
+    }
+  }
+
+
+
+  axios.get('http://fizal.me/pokeapi/api/v2/name/nidorino.json')
+      .then(pokeInfo){
+              let name = response.data.name;
+              let hp = response.data.stats[5].base_stat;
+              let attack = response.data.stats[4].base_stat;
+              let defense = response.data.stats[3].base_stat;
+
+
+  }
+
+            function pokeInfo(){
+                    let pokeName = document.createElement('li');
+                    pokemonName.innerHTML = this.name ;
+                    this.element.appendChild('pokeName');
+
+                    let pokeHp = document.createElement('li');
+                    pokeHp.innerHTML= this.attack;
+                    this.element.appendChild('pokeHp');
+
+                    let pokeAttack = document.createElement('li');
+                    pokeAttack.innerHTML= this.attack;
+                    this.element.appendChild('pokeAttack');
+
+                    let pokeDefense =  document.createElement('li');
+                    pokeDefense .innerHTML= this.attack;
+                    this.element.appendChild('pokeDefense ');
+            }
+
+
+function pokemonData(){
 axios.get('http://fizal.me/pokeapi/api/v2/name/nidorino.json')
     .then(function (response){
-          let firstPoke = document.getElementById('firstPoke');
-          firstPoke.innerHTML= response.data.name;
+            let name = response.data.name;
+            let hp = response.data.stats[5].base_stat;
+            let attack = response.data.stats[4].base_stat;
+            let defense = response.data.stats[3].base_stat;
 
-            console.log(response.data.name);
+                  console.log(name, hp, attack, defense);
+                              console.log(response.data);
+
+                  let = new Pokemon(name,hp,attack,defense);
+
+if(let i= 0; i<hp.length; 1++){
+  console.log(h);
+}
+
   })
 }
 
 
 axios.get('http://fizal.me/pokeapi/api/v2/name/steelix.json')
     .then(function (response){
-          console.log(response.data);
+      let name = response.data.name;
+      let hp = response.data.stats[5].base_stat;
+      let attack = response.data.stats[4].base_stat;
+      let defense = response.data.stats[3].base_stat;
+
+            console.log(name, hp, attack, defense);
+
   })
 
 axios.get('http://fizal.me/pokeapi/api/v2/name/totodile.json')
     .then(function (response){
-          console.log(response);
+      let name = response.data.name;
+      let hp = response.data.stats[5].base_stat;
+      let attack = response.data.stats[4].base_stat;
+      let defense = response.data.stats[3].base_stat;
+
+            console.log(name, hp, attack, defense);
         })
 
-pokemonData();
-// function pokeobjects(){
-//   let nidorino = new Pokemon();
-//   pokemonName.innerHTML= nidorino.name;
-// }
-// }
 
-// function putPokemon(response){
-//     const pokemonData = response.data.products[index];
-//     let pokemonObject = new Pokemon(pokemonData.images[0].src, productData.title);
-//     productObject.renderProduct();0
-//   }
-// }
+
+
+pokemonData();
