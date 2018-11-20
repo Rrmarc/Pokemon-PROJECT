@@ -1,113 +1,253 @@
-let pokeBallClick= document.getElementById('pokeball');
-let mainPokeballImg= document.getElementsByClassName('mainPokeball')[0];
+let pokeBallClick= document.getElementById("ball1");
 
 function firstChange(){
-   if(mainPokeballImg.style.display=== 'none'){
-     mainPokeballImg.style.display='block';
+   if(pokeBallClick.src === 'steelix.png'){
+     pokeBallClick.src= 'pokeball_.png';
      console.log('show');
    } else{
-     mainPokeballImg.style.display = 'none';
+     pokeBallClick.src= 'steelix.png';
      console.log('hidde');
    }
 }
 
 pokeBallClick.addEventListener('click', firstChange );
-  // end of first click event
+
+
+
+let pokeBallClick2= document.getElementById("ball2");
+
+function secondChange(){
+   if(pokeBallClick2.src === 'firstPokemon_033_nidorino.png'){
+     pokeBallClick2.src= 'pokeball_.png';
+     console.log('show');
+   } else{
+     pokeBallClick2.src= 'firstPokemon_033_nidorino.png';
+     console.log('hidde');
+   }
+}
+
+pokeBallClick2.addEventListener('click', secondChange );
+
+
+
+let pokeBallClick3= document.getElementById("ball3");
+
+function thirdChange (){
+   if(pokeBallClick3.src === 'totodile.png'){
+     pokeBallClick3.src= 'pokeball.png';
+     console.log('show');
+   } else{
+     pokeBallClick3.src= 'totodile.png';
+     console.log('hidde');
+   }
+}
+
+pokeBallClick3.addEventListener('click', thirdChange );
+pokeBallClick3.addEventListener("mouseout", thirdChange);
 
 
 
 
+////////////////////////////////////////////////////////////////////
 
-
+// let pokeBallClick4= document.getElementById("ball3");
+//
+// function thirdChange (){
+//    if(pokeBallClick3.src === 'totodile.png'){
+//      pokeBallClick3.src= 'pokeball.png';
+//      console.log('show');
+//    } else{
+//      pokeBallClick3.src= 'totodile.png';
+//      console.log('hidde');
+//    }
+// }
+//
+// pokeBallClick3.addEventListener('click', thirdChange );
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 class Pokemon {
-      constructor(name,hp,attack,defense){
-            this.name = name
-            this.hp = hp;
-            this.attack = attack;
-            this.defense = defense;
-            // this.conatiner = document.getElementById();
-            this.element = document.createElement('ul');
-            this.container = appendChild(this.element);
-            this.element.className = 'pokecard' ;
+      constructor(name, hp, attack, defense, abilities, classtext){
+              // this.pokephoto= pokephoto;
+              this.name = name;
+              this.hp = hp;
+              this.attack = attack;
+              this.defense = defense;
+              this.abilities = abilities;
+              this.classtext = classtext;
+              // what div will be used to store data
+              this.container= document.getElementById(name);
+              // how I want the information to display onto the page
+              this.element = document.createElement("ul");
+              this.element.className = ("rashellHell");
     }
+
+    display(){
+      console.log("displaying " + this.name);
+
+      let pokemonName = document.createElement('h3');
+          pokemonName.innerHTML = this.name;
+          this.element.appendChild(pokemonName);
+          this.container.appendChild(this.element);
+          this.element.className = this.classtext;
+
+      let pokeHp = document.createElement('li');
+          pokeHp.innerHTML= "HP: " + this.attack;
+          this.element.appendChild(pokeHp);
+          this.container.appendChild(this.element);
+
+      let pokemonAttack = document.createElement('li');
+          pokemonAttack.innerHTML ="Attack: " + this.attack;
+          this.element.appendChild(pokemonAttack);
+          this.container.appendChild(this.element);
+
+      let pokemonDefense = document.createElement('li');
+          pokemonDefense.innerHTML = "Defense: " + this.defense;
+          this.element.appendChild(pokemonDefense);
+          this.container.appendChild(this.element);
+
+      let pokemonAbilities = document.createElement('li');
+          pokemonAbilities.innerHTML = "Abilities: " + this.abilities;
+          this.element.appendChild(pokemonAbilities);
+          this.container.appendChild(this.element);
+
+
+    }
+
   }
 
 
 
-  axios.get('http://fizal.me/pokeapi/api/v2/name/nidorino.json')
-      .then(pokeInfo){
+
+// making the API calls for the pokemon information
+axios.get('http://fizal.me/pokeapi/api/v2/name/nidorino.json')
+      .then(function (response){
+              // let pokephoto ="firstPokemon_033_nidorino.png";
               let name = response.data.name;
               let hp = response.data.stats[5].base_stat;
               let attack = response.data.stats[4].base_stat;
               let defense = response.data.stats[3].base_stat;
+              let abilities= [];
+                for ( let i=0; i<response.data.abilities.length; i++){
+                  abilities.push(response.data.abilities[i].ability.name);
+                  console.log(response.data.abilities[i]);
+                }
 
 
-  }
-
-            function pokeInfo(){
-                    let pokeName = document.createElement('li');
-                    pokemonName.innerHTML = this.name ;
-                    this.element.appendChild('pokeName');
-
-                    let pokeHp = document.createElement('li');
-                    pokeHp.innerHTML= this.attack;
-                    this.element.appendChild('pokeHp');
-
-                    let pokeAttack = document.createElement('li');
-                    pokeAttack.innerHTML= this.attack;
-                    this.element.appendChild('pokeAttack');
-
-                    let pokeDefense =  document.createElement('li');
-                    pokeDefense .innerHTML= this.attack;
-                    this.element.appendChild('pokeDefense ');
-            }
 
 
-function pokemonData(){
-axios.get('http://fizal.me/pokeapi/api/v2/name/nidorino.json')
-    .then(function (response){
-            let name = response.data.name;
-            let hp = response.data.stats[5].base_stat;
-            let attack = response.data.stats[4].base_stat;
-            let defense = response.data.stats[3].base_stat;
+              let nidorino = new Pokemon( name, hp, attack, defense, abilities, "ok");
+              nidorino.display();
+              console.log(name, hp, attack, defense);
 
-                  console.log(name, hp, attack, defense);
-                              console.log(response.data);
 
-                  let = new Pokemon(name,hp,attack,defense);
-
-if(let i= 0; i<hp.length; 1++){
-  console.log(h);
-}
-
-  })
-}
-
+              RashellHell.poke.push(nidorino);
+            })
 
 axios.get('http://fizal.me/pokeapi/api/v2/name/steelix.json')
     .then(function (response){
-      let name = response.data.name;
-      let hp = response.data.stats[5].base_stat;
-      let attack = response.data.stats[4].base_stat;
-      let defense = response.data.stats[3].base_stat;
+              // let pokephoto ="steelix.png";
+              let name = response.data.name;
+              let hp = response.data.stats[5].base_stat;
+              let attack = response.data.stats[4].base_stat;
+              let defense = response.data.stats[3].base_stat;
+              let abilities= [];
+                for ( let i=0; i<response.data.abilities.length; i++){
+                  abilities.push(response.data.abilities[i].ability.name);
+                  console.log(response.data.abilities[i]);
+                }
 
-            console.log(name, hp, attack, defense);
+                let steelix = new Pokemon( name, hp, attack, defense, abilities, "ok");
 
+                steelix.display();
+
+                  RashellHell.poke.push(steelix);
+
+              console.log(name, hp, attack, defense);
   })
 
 axios.get('http://fizal.me/pokeapi/api/v2/name/totodile.json')
     .then(function (response){
-      let name = response.data.name;
-      let hp = response.data.stats[5].base_stat;
-      let attack = response.data.stats[4].base_stat;
-      let defense = response.data.stats[3].base_stat;
 
-            console.log(name, hp, attack, defense);
-        })
+              let name = response.data.name;
+              let hp = response.data.stats[5].base_stat;
+              let attack = response.data.stats[4].base_stat;
+              let defense = response.data.stats[3].base_stat;
+              let abilities= [];
+                for ( let i=0; i<response.data.abilities.length; i++){
+                  abilities.push(response.data.abilities[i].ability.name);
+                  console.log(response.data.abilities[i]);
+                }
+
+                let totodile = new Pokemon(name, hp, attack, defense, abilities, "ok");
+                totodile.display();
+
+                  RashellHell.poke.push(totodile);
+
+              console.log(name, hp, attack, defense);
+    })
 
 
 
+    class Trainer{
+      constructor(name, height, adress, classtext){
+        this.name = name;
+        this.height = height;
+        this.adress = adress;
+        this.classtext= classtext;
+        this.container = document.getElementById("trainer");
+        this.element = document.createElement("ol");
+        this.container.appendChild(this.element);
+        this.list1 = document.createElement('li');
+        this.list2 = document.createElement('li');
+        this.list3 =document.createElement('li');
+        this.poke = [];
 
-pokemonData();
+    }
+
+    all(){
+        return this.poke;
+    }
+
+    get(name){
+      for(let r=0; r < this.poke.length; r++){
+          if(name === this.poke[r].name){
+            return this.poke[r];
+          }
+      }
+    }
+
+    execute(){
+      let name= this.name;
+      this.element.appendChild(this.list1);
+      let breaker1 = this.list1;
+       breaker1.innerHTML = this.name;
+
+       let height=this.height;
+       this.element.appendChild(this.list2);
+       let breaker2 = this.list2;
+       breaker2.innerHTML = this.height;
+
+      let adress= this.adress;
+      this.element.appendChild(this.list3);
+      let breaker3 = this.list3;
+      breaker3.innerHTML = this.adress;
+
+      let classtext= this.classtext;
+      this.element.className =  classtext;
+
+    }
+  }
+
+            let name;
+            let height;
+            let adress;
+            let classtext;
+            let breaker1;
+            let breaker2;
+            let breaker3;
+
+        let RashellHell= new Trainer("RashellHell", "5'5''", "123 Seasme Street NY", "ok" );
+
+
+RashellHell.execute();

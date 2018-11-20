@@ -1,9 +1,10 @@
 *{
   margin: 0;
-  padding: 0;
+  padding: 2px;
 }
 body{
-  background-image: url('cloud-background.jpg');
+  border: solid 10px #033F98;
+  background:#0D1DFE;
   background: cover;
   padding: 30px;
 }
@@ -12,8 +13,9 @@ body{
   font-size: 35px;
   text-align: center;
 }
-#header > h1{
+#header > img{
   padding: 30px;
+  width: 100%;
 }
 
 @media (max-width:500px){
@@ -22,11 +24,12 @@ body{
   }
   .mainPokeball > img{
     width:100px;
+
   }
   #pokeball{
-    width: 150;
+    width: 150px;
+    height:350px;
   }
-
 }
 
 #container{
@@ -36,26 +39,29 @@ body{
 
 }
 
-#pokeball:hover{
-  background-color: yellow;
-  border-radius: 50%;
-}
+
 #pokeball{
-  width:50px;
+  width:200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   animation: slideAndZoom 2s  ;
   animation-fill-mode: forwards;
+  background-color: #3B4CCA;
+  border-radius: 50%;
+  height: 100px;
+  width:50px;
 }
 
 @keyframes slideAndZoom {
   0%{
-    width: 500px;
+    width: 600px;
+    height: 600px;
   }
 
   100%{
     width:200px;
+    height:200px;
 
   }
 }
@@ -73,22 +79,70 @@ body{
 /* .hidden{
   opacity: 0;
 } */
+.mainPokeball> div{
+  display: inline-block;
+  margin: 10px;
+  width: 250px;
+  min-height:200px;
+  background-color:#3B4CCA ;
+  border: solid 10px #033F98;
 
-.pokemoncards > img{
+
+}
+
+.infoDiv{
+  width: 200px;
+  height: 300px;
+  /* margin-top: 10px; */
+  padding:0 10px 10px;
+  background-color:#FF0000;
+  position: relative;
+  top:0;
+}
+.infoDiv > p{
+  font-family:cursive ;
+  font-size: 25px;
+  padding:1em;
+  text-align: left;
+}
+img{
   width: 180px;
-  padding:30px;
-  margin: 20px;
+  padding:0 10px 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+
 }
 .mainPokeball{
   padding: 0;
   margin: 0;
   width:100%;
-  display: none;
   animation:fadeIn 2s;
+
 }
 
-.pokemoncards{
+/* .firstBox{
+  margin-top: 500px;
+} */
 
-  width: 500px;
-  background-color: yellow;
+.ok li{
+  font-size: 20px;
+  list-style-type: none;
+  color:white;
+  text-align:  center;
+}
+.nah{
+  font-size: 20px;
+  list-style-type: none;
+  color:white;
+  align-items: center;
+}
+h3{
+  font-size:30px;
+}
+
+
+#trainer{
+  width: 100%;
+  height: 50px;
 }
