@@ -1,12 +1,16 @@
 let pokeBallClick= document.getElementById("ball1");
+let steelixInfo = document.getElementById("steelix");
 
 function firstChange(){
    if(pokeBallClick.src === 'steelix.png'){
      pokeBallClick.src= 'pokeball_.png';
+     steelixInfo.className = 'infoDiv';
      console.log('show');
    } else{
      pokeBallClick.src= 'steelix.png';
+     steelixInfo.className = 'info';
      console.log('hidde');
+
    }
 }
 
@@ -15,13 +19,16 @@ pokeBallClick.addEventListener('click', firstChange );
 
 
 let pokeBallClick2= document.getElementById("ball2");
+let nidorinoInfo = document.getElementById("nidorino");
 
 function secondChange(){
    if(pokeBallClick2.src === 'firstPokemon_033_nidorino.png'){
      pokeBallClick2.src= 'pokeball_.png';
+     nidorinoInfo.className = 'infoDiv';
      console.log('show');
    } else{
      pokeBallClick2.src= 'firstPokemon_033_nidorino.png';
+     nidorinoInfo.className = 'info';
      console.log('hidde');
    }
 }
@@ -29,22 +36,38 @@ function secondChange(){
 pokeBallClick2.addEventListener('click', secondChange );
 
 
-
 let pokeBallClick3= document.getElementById("ball3");
+let totodileInfo = document.getElementById("totodile");
 
 function thirdChange (){
    if(pokeBallClick3.src === 'totodile.png'){
-     pokeBallClick3.src= 'pokeball.png';
+     pokeBallClick3.src = 'pokeball.png';
+     totodileInfo.className = 'infoDiv';
      console.log('show');
    } else{
      pokeBallClick3.src= 'totodile.png';
+     totodileInfo.className = 'info';
      console.log('hidde');
    }
 }
 
 pokeBallClick3.addEventListener('click', thirdChange );
-pokeBallClick3.addEventListener("mouseout", thirdChange);
 
+////////////////////////////////////////////////////////////////
+
+// let steelixInfo = document.getElementsByClassName("steelixInfo");
+//
+// function showPokeInfo(){
+//       if (steelixInfo.style.display === 'none'){
+//         // steelixInfo.style.display = '';
+//         steelixInfo.className = 'infoDiv';
+//       } else{
+//         // showInfo.style.display = 'none';
+//         steelixInfo.className = 'steelixInfo';
+//       }
+// }
+//
+// steelixInfo.addEventListener('click', showPokeInfo);
 
 
 
@@ -136,6 +159,8 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/nidorino.json')
 
 
 
+
+
               let nidorino = new Pokemon( name, hp, attack, defense, abilities, "ok");
               nidorino.display();
               console.log(name, hp, attack, defense);
@@ -198,7 +223,7 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/totodile.json')
         this.container = document.getElementById("trainer");
         this.element = document.createElement("ol");
         this.container.appendChild(this.element);
-        this.list1 = document.createElement('li');
+        this.list1 = document.createElement('h1');
         this.list2 = document.createElement('li');
         this.list3 =document.createElement('li');
         this.poke = [];
@@ -212,7 +237,7 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/totodile.json')
     get(name){
       for(let r=0; r < this.poke.length; r++){
           if(name === this.poke[r].name){
-            return this.poke[r];
+            return this.poke[r];4
           }
       }
     }
@@ -221,7 +246,7 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/totodile.json')
       let name= this.name;
       this.element.appendChild(this.list1);
       let breaker1 = this.list1;
-       breaker1.innerHTML = this.name;
+      breaker1.innerHTML = this.name;
 
        let height=this.height;
        this.element.appendChild(this.list2);
@@ -251,3 +276,47 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/totodile.json')
 
 
 RashellHell.execute();
+
+////////////////////////////////////////////////////////////////
+
+// class MoreInfo{
+//     constructor(name, priority, power, accuracy, classtext){
+//       this.name= name;
+//       this.priority= priority;
+//       this.power= power;
+//       this.accuracy= accuracy;
+//       this.classtext = classtext;
+//       this.container=getElementById(name);
+//       this.element=document.createElement("div");
+//
+//         }
+//
+//         show(){
+//               console.log(this.power);
+//           let showname = document.createElement('h3');
+//               showname.innerHTML = this.name;
+//               this.element.appendChild(showname);
+//               this.container.appendChild(this.element);
+//               this.element.className = this.classtext;
+//
+//           let showpriority = document.createElement('p');
+//               priority.innerHTML =  this.priority;
+//               this.element.appendChild(priority);
+//               this.container.appendChild(this.element);
+//               this.element.className = this.classtext;
+//
+//           let showpower = document.createElement('p');
+//             showpower.innerHTML =  this.power;
+//             this.element.appendChild(showpower);
+//             this.container.appendChild(this.element);
+//             this.element.className = this.classtext;
+//
+//
+//           let showaccuracy = document.createElement('p');
+//             showaccuracy.innerHTML =  this.accuracy;
+//             this.element.appendChild(showaccuracy);
+//             this.container.appendChild(this.element);
+//             this.element.className = this.classtext;
+//
+//         }
+//       }

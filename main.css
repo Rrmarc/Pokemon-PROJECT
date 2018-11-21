@@ -1,12 +1,13 @@
 *{
   margin: 0;
-  padding: 2px;
+  padding: 0px;
 }
 body{
   border: solid 10px #033F98;
   background:#0D1DFE;
   background: cover;
   padding: 30px;
+  font-family: 'Francois One', sans-serif;
 }
 
 #header{
@@ -30,6 +31,8 @@ body{
     width: 150px;
     height:350px;
   }
+
+
 }
 
 #container{
@@ -89,6 +92,18 @@ body{
 
 
 }
+.info{
+
+width: 200px;
+height: 300px;
+/* margin-top: 10px; */
+padding: 10px ;
+margin-left: 15px;
+background-color:#FF0000;
+position: relative;
+top:0;
+}
+
 
 .infoDiv{
   width: 200px;
@@ -98,12 +113,16 @@ body{
   background-color:#FF0000;
   position: relative;
   top:0;
+  display: none;
+
+
 }
 .infoDiv > p{
-  font-family:cursive ;
+
   font-size: 25px;
   padding:1em;
   text-align: left;
+
 }
 img{
   width: 180px;
@@ -114,9 +133,9 @@ img{
 
 }
 .mainPokeball{
-  padding: 0;
-  margin: 0;
-  width:100%;
+  padding: 10px;
+  margin: 10px;
+  width:auto;
   animation:fadeIn 2s;
 
 }
@@ -125,10 +144,16 @@ img{
   margin-top: 500px;
 } */
 
-.ok li{
+.ok li  {
   font-size: 20px;
   list-style-type: none;
   color:white;
+  text-align:  center;
+}
+.ok h1  {
+  font-size: 50px;
+  list-style-type: none;
+  color:yellow;
   text-align:  center;
 }
 .nah{
@@ -145,4 +170,14 @@ h3{
 #trainer{
   width: 100%;
   height: 50px;
+}
+
+
+
+#container{
+  margin: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  padding: 10px;
 }
