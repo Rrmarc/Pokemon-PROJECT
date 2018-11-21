@@ -143,7 +143,7 @@ class Pokemon {
 
 
 // making the API calls for the pokemon information
-axios.get('http://fizal.me/pokeapi/api/v2/name/nidorino.json')
+axios.get('https://fizal.me/pokeapi/api/v2/name/nidorino.json')
       .then(function (response){
               // let pokephoto ="firstPokemon_033_nidorino.png";
               let name = response.data.name;
@@ -169,7 +169,7 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/nidorino.json')
               RashellHell.poke.push(nidorino);
             })
 
-axios.get('http://fizal.me/pokeapi/api/v2/name/steelix.json')
+axios.get('https://fizal.me/pokeapi/api/v2/name/steelix.json')
     .then(function (response){
               // let pokephoto ="steelix.png";
               let name = response.data.name;
@@ -191,7 +191,7 @@ axios.get('http://fizal.me/pokeapi/api/v2/name/steelix.json')
               console.log(name, hp, attack, defense);
   })
 
-axios.get('http://fizal.me/pokeapi/api/v2/name/totodile.json')
+axios.get('https://fizal.me/pokeapi/api/v2/name/totodile.json')
     .then(function (response){
 
               let name = response.data.name;
