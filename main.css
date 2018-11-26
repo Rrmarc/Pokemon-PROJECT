@@ -9,6 +9,12 @@ body{
   padding: 30px;
   font-family: 'Francois One', sans-serif;
 }
+#divider{
+  background-image: url('vaporwave.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
 
 #header{
   font-size: 35px;
@@ -16,20 +22,25 @@ body{
 }
 #header > img{
   padding: 30px;
-  width: 100%;
+  width: 70%;
 }
 
-@media (max-width:500px){
-  #header{
-    font-size: 20px;
-  }
+
+#container{
+  width: 100px;
+  margin: 0 auto;
+
+}
+
+@media (max-width:100px){
+
   .mainPokeball > img{
-    width:100px;
+    width:30px;
 
   }
   #pokeball{
-    width: 150px;
-    height:350px;
+    width: 100px;
+    height:300px;
   }
 
 
@@ -38,7 +49,7 @@ body{
 #container{
   width: 100%;
   height: auto;
-  margin: 0 ;
+  margin: 0 auto;
 
 }
 
@@ -79,19 +90,27 @@ body{
 }
 
 
-/* .hidden{
-  opacity: 0;
+/* .mainPokeball{
+  display: inline-block;
+  margin:0 auto;
+  width: 950px;
+  min-height:200px;
+  background-color:#3B4CCA ;
+  border: solid 10px #033F98;
 } */
+
+
 .mainPokeball> div{
   display: inline-block;
-  margin: 10px;
+  margin: 0 5% 5%;
+
   width: 250px;
   min-height:200px;
   background-color:#3B4CCA ;
   border: solid 10px #033F98;
-
-
 }
+
+
 .info{
 
 width: 200px;
@@ -105,11 +124,17 @@ top:0;
 }
 
 
+.ball{
+  height: 200px;
+  padding: 10px;
+
+}
+
 .infoDiv{
   width: 200px;
-  height: 300px;
+  height: 310px;
   /* margin-top: 10px; */
-  padding:0 10px 10px;
+  padding:15px 15px 15px;
   background-color:#FF0000;
   position: relative;
   top:0;
@@ -133,9 +158,9 @@ img{
 
 }
 .mainPokeball{
-  padding: 10px;
-  margin: 10px;
-  width:auto;
+  padding: 40px;
+  margin: 0 5%;
+  width:100%;
   animation:fadeIn 2s;
 
 }
@@ -170,14 +195,4 @@ h3{
 #trainer{
   width: 100%;
   height: 50px;
-}
-
-
-
-#container{
-  margin: 50px;
-  margin-left: 20px;
-  margin-right: 20px;
-
-  padding: 10px;
 }
