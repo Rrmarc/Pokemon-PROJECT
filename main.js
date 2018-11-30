@@ -137,22 +137,6 @@ class Pokemon {
 
     }
 
-    moreInfo(){
-          console.log( "this shouldbe a Button");
-      let showMore= document.createElement('button');
-          showMore.innerHTML = "More Stats" ;
-          this.element.appendChild(showMore);
-          this.container.appendChild(this.element);
-
-          show(){
-
-            let newStats = document.createElement('')
-          }
-
-
-
-    }
-
   }
 
 
